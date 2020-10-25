@@ -1,0 +1,158 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: white;
+    opacity: 99.5%;
+}
+
+.header__left {
+    display: flex;
+    align-items: center;
+    padding-left: 25px;
+    min-width: 20%;
+}
+
+.header__logo {
+    height: 50px;
+    margin-left: 20px;
+}
+
+.header__menuIcon:hover{
+    cursor: pointer;
+    color: lightgray;
+}
+
+.header__input {
+    display: flex;
+    height: 30px;
+    width: 35%;
+    border: 1px solid lightgray;
+    align-items: center;
+    min-width: 300px !important;
+    border-radius: 2px;
+    -webkit-box-shadow: inset 0px 2px 2px -1px rgba(0,0,0,0.3);
+    -moz-box-shadow: inset 0px 2px 2px -1px rgba(0,0,0,0.3);
+    box-shadow: inset -2px 2px 2px -1px rgba(0,0,0,0.3);
+}
+
+.header__input > input {
+    flex: 1;
+    border: 0;
+    outline: 0;
+    padding-left: 10px;
+    font-size: 14px;
+}
+
+.header__input:focus-within {
+    border: 1px solid rgb(1, 121, 177);
+    box-shadow: inset -2px 2px 2px 0px rgba(0,0,0,0.3);
+}
+
+
+.header__input__button {
+    width: 70px !important;
+    height: 30px !important;
+    margin-top: 4px;
+    background-color: #fafafa;
+    border-left: 1px solid lightgrey;
+    color: gray;
+}
+
+.header__icons {
+    display: flex;
+    align-items: center;
+    padding-right: 25px;
+    justify-content: space-between;
+    width: 20%;
+}
+
+.header__avatar{
+    cursor: pointer;
+}
+
+.header__popup__upload{
+    position: absolute;
+    top: 70px;
+    right: 19.2%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    background-color: #606060;
+    font-size: 14px;
+    padding: 5px;
+    border-radius: 2px;
+    -webkit-box-shadow: 0px 2px 2px -1px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 2px 2px -1px rgba(0,0,0,0.3);
+    box-shadow: -2px 2px 2px -1px rgba(0,0,0,0.3);
+    opacity: 0%;
+}
+
+.header__popup__youtube{
+    position: absolute;
+    top: 70px;
+    right: 12%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    background-color: #606060;
+    font-size: 14px;
+    padding: 5px;
+    border-radius: 2px;
+    -webkit-box-shadow: 0px 2px 2px -1px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 2px 2px -1px rgba(0,0,0,0.3);
+    box-shadow: -2px 2px 2px -1px rgba(0,0,0,0.3);
+    opacity: 0%;
+}
+.header__popup__notifications{
+    position: absolute;
+    top: 70px;
+    right: 6.2%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    background-color: #606060;
+    font-size: 14px;
+    padding: 5px;
+    border-radius: 2px;
+    -webkit-box-shadow: 0px 2px 2px -1px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 2px 2px -1px rgba(0,0,0,0.3);
+    box-shadow: -2px 2px 2px -1px rgba(0,0,0,0.3);
+    opacity: 0%;
+}
+
+.header__icon__upload{
+    color: #606060;
+}
+
+.header__icon__upload:hover{
+    cursor: pointer;
+}
+
+.header__icon__upload:hover ~ .header__popup__upload{
+    opacity: 90%;
+}
+.header__icon__youtube{
+    color: #606060;
+}
+
+.header__icon__youtube:hover{
+    cursor: pointer;
+}
+
+.header__icon__youtube:hover ~ .header__popup__youtube{
+    opacity: 90%;
+}
+
+.header__icon__notifications{
+    color: #606060;
+}
+
+.header__icon__notifications:hover{
+    cursor: pointer;
+}
+
+.header__icon__notifications:hover ~ .header__popup__notifications{
+    opacity: 90%;
+}
