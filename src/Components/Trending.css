@@ -11,19 +11,40 @@
     justify-content: space-between;
     width: 30%;
     background-color: transparent;
-    padding-left: 300px;
+    padding-left: 200px;
     padding-bottom: 10px;
 }
 .trending__top > span {
     display: flex;
     flex-direction: column;
-    align-items: center;    
+    align-items: center;
+    transition-property: scale;    
+}
+
+.trending__top > span:hover{
+    cursor: pointer;
+    scale: 1.1;
+}
+
+.trending__top > span:hover > .trending__icon{
+    animation: hoverAnimation;
+    animation-duration: 1s;
+    color:rgb(194, 0, 0);
+}
+.trending__top > span:hover > label{
+    animation: hoverAnimation;
+    animation-duration: 1s;
+    color:rgb(194, 0, 0);
+}
+
+@keyframes hoverAnimation{
+    0% {color: #494949}
+    100% {color: rgb(194, 0, 0);}
 }
 
 .trending__top > span > label {
     color: #494949;
     font-weight: bold;
-    text-shadow: 0px 1px 2px #808080;
 }
 
 .trending > hr {
@@ -40,7 +61,7 @@
     width: 90px !important;
     height: 90px !important;
     color: #494949;
-
+    transition: 1s;
 }
 
 .trending__bottom {

@@ -1,15 +1,21 @@
 .videocard {
-    width: 370px;
+    width: 350px;
     margin-bottom: 40px;
-}
-
-.videocard:hover{
-    cursor: pointer;
+    margin-right: 20px;
 }
 
 .videocard__thumbnail {
     height: 200px;
     width: 350px;
+}
+
+.videocard__thumbnail:hover{
+    cursor: pointer;
+    filter: brightness(60%);
+}
+
+.videocard__text > h4:hover{
+    cursor: pointer;
 }
 
 .videocard__info {

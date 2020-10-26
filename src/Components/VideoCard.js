@@ -1,11 +1,14 @@
 import React from 'react'
 import Avatar from '@material-ui/core/Avatar'
 import './VideoCard.css'
+import {useHistory} from 'react-router-dom'
 
 function VideoCard({image, title, channel, views, timestamp, channelImage}){
     let roundedViews = views;
     let biggerMillion = false;
     let biggerThousand = false;
+    const history = useHistory()
+
     if(views > 999999){
         const viewsFormatted = views / 1000000;
         roundedViews = Math.round(viewsFormatted * 10) / 10;
@@ -22,11 +25,11 @@ function VideoCard({image, title, channel, views, timestamp, channelImage}){
 
     return(
         <div className="videocard">
-            <img src={image} alt="video" className="videocard__thumbnail"/>
+            <img src={image} alt="video" className="videocard__thumbnail" onClick={() => history.push("/videoPage")}/>
             <div className="videocard__info">
                 <Avatar className="videocard__avatar" src={channelImage} alt={channel}/>
                 <div className="videocard__text">
-                    <h4>{title}</h4>
+                    <h4 onClick={() => history.push("/videoPage")}>{title}</h4>
                     <p>{channel}</p>
                     { biggerMillion ? 
                     <p>

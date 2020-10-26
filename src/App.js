@@ -10,6 +10,7 @@ import SearchList from './Components/SearchList'
 import {Provider} from 'react-redux'
 import Store from './Redux/Store'
 import Trending from './Components/Trending'
+import VideoPage from './Components/VideoPage'
 
 
 function App() {
@@ -19,10 +20,15 @@ function App() {
       <Router>
         <Header />
         <SearchList />
-        <ol>
-          {}
-        </ol>
+
         <Switch>
+
+        <Route path="/videoPage">
+            <div className="app__page">
+              <SideBar selected=""/>
+              <VideoPage />
+            </div>
+        </Route>
 
         <Route path="/trending">
             <div className="app__page">

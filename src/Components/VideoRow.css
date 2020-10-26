@@ -6,30 +6,40 @@
     margin-bottom: 20px;
 }
 
+.videoRow > img:hover{
+    cursor: pointer;
+    filter: brightness(60%);
+}
+
+.videoRow__text > h3:hover{
+    cursor: pointer;
+}
+
 .videoRow > img {
-    object-fit: contain;
-    width: 286px !important;
-    height: 178px !important;
+    object-fit: fill;
+    width: 400px !important;
+    height: 225px !important;
 }
 
 .videoRow__text {
-    margin-left: 14px;
+    margin-left: 10px;
     margin-top: 15px;
 }
 
 .videoRow__text > h3 {
     padding-bottom: 5px;
-    text-shadow: 0px 1px 2px #444444;
+    font-weight: 100;
+    font-size: 23px;
 }
 
 .videoRow__description {
     margin-top: 20px;
-    font-size: 16px;
+    font-size: 15px;
     color: #606060;
 }
 
 .videoRow__headline {
-    font-size: 16px;
+    font-size: 15px;
     color: #606060;
 }
 

@@ -1,0 +1,115 @@
+.videoplayer{
+    position: relative;
+    display: flex;
+}
+
+.videoplayer__player{
+    width: 100%;
+    height: auto;
+    object-fit: fill;
+}
+
+.videoplayer__player:hover ~ .videoplayer__options{
+    opacity: 100%;
+}
+.videoplayer__player:hover ~ .redLine{
+    opacity: 100%;
+}
+.videoplayer__player:hover ~ .greyLine{
+    opacity: 50%;
+}
+
+.videoplayer__options:hover ~ .redLine{
+    opacity: 100%;
+}
+.videoplayer__options:hover ~ .greyLine{
+    opacity: 50%;
+}
+
+.videoplayer__options{
+    display: flex;
+    flex: 1;
+    opacity: 0%;
+    position: absolute;
+    bottom: 0px;
+    height: 40px;
+    width: 100%;
+    align-items: center;
+    -webkit-box-shadow: inset 0px -30px 50px -30px #000000; 
+    box-shadow: inset 0px -30px 50px -30px #000000;
+    z-index: 1;
+}
+
+.videoplayer__options:hover{
+    opacity: 100%;
+}
+
+.videoplayer__options > button{
+    height: 40px;
+    width: 60px;
+    margin-left: 10px;
+    background-color: transparent;
+    border: 0px;
+    outline: 0;
+}
+
+.videoplayer__options > button:hover{
+    cursor: pointer;
+}
+
+.videoplayer__options > label{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    margin-left: 10px;
+    color: white;
+}
+
+.videoplayer__icon {
+    color: white !important;
+    height: 30px !important;
+    width: 30px !important;
+}
+
+.videoplayer__options__slider{
+    opacity: 0;
+    width: 0px !important;
+    color: white !important;
+    margin-left: 10px;
+    margin-right: 10px;
+    transition-property: width,opacity;
+    transition-duration: 0.5s;
+}
+
+.videoplayer__icon__volume{
+    color: white !important;
+    height: 30px !important;
+    width: 30px !important;
+}
+
+.sliderTransition:hover > .videoplayer__options__slider{
+    opacity: 100;
+    width: 60px !important;
+}
+
+.redLine{
+    position: absolute;
+    background-color:red;
+    width: 100%;
+    height: 3px;
+    bottom: 40px;
+    outline: 0;
+    border: 0;
+    opacity: 0%;
+}
+
+.greyLine{
+    position: absolute;
+    background-color:lightgray;
+    width: 100%;
+    height: 3px;
+    bottom: 40px;
+    outline: 0;
+    border: 0;
+    opacity: 0%;
+}
+
