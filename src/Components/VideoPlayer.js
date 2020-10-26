@@ -1,4 +1,4 @@
-import React,{useRef, useState, useEffect} from 'react'
+import React,{useRef, useState} from 'react'
 import './VideoPlayer.css'
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import VolumeUpIcon from '@material-ui/icons/VolumeUp';
