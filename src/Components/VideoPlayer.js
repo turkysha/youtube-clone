@@ -9,7 +9,7 @@ import { setTimerInterval } from '../Redux/Search/SearchActions';
 
 
 function VideoPlayer() {
-    const videoLink = "https://r2---sn-v2uph5-15bl.googlevideo.com/videoplayback?expire=1603767913&ei=CTqXX_bNIJb61wKejaeADQ&ip=89.201.184.149&id=o-ADs0dap-kZ1il2Dcjc71v5HsCHWR1BjD4T7qDXRPsERk&itag=22&source=youtube&requiressl=yes&mh=1g&mm=31%2C29&mn=sn-v2uph5-15bl%2Csn-c0q7lnsl&ms=au%2Crdu&mv=m&mvi=2&pcm2cms=yes&pl=17&initcwndbps=591250&vprv=1&mime=video%2Fmp4&ratebypass=yes&dur=184.714&lmt=1536427297183846&mt=1603746164&fvip=2&c=WEB&txp=5531332&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cvprv%2Cmime%2Cratebypass%2Cdur%2Clmt&sig=AOq0QJ8wRQIhAM_d1qu-QFGCeZGOthNRJFMxcI2MPBoLIinknr3s-dirAiAzCL3KqwdrLPpdU0yCORaa85YlvWTLjjUmDPzh8fPVTA%3D%3D&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpcm2cms%2Cpl%2Cinitcwndbps&lsig=AG3C_xAwRgIhANWaeilu-T8_97jZAl7G6NjwXAdvexgS480A8yfe2djUAiEAi3wPQ0-t1X8UVjx9yNK2lrKn1o0MWl9qxe40E3ZTwTY%3D"
+    const videoLink = "https://vod-progressive.akamaized.net/exp=1603822335~acl=%2A%2F700245120.mp4%2A~hmac=1574a7dd385e9c2df7fe836502bbd1fc19c2a4af7e04c8bbfa791a0d1297d4dd/vimeo-prod-skyfire-std-us/01/1132/8/205660469/700245120.mp4"
 
     const [videoPlaying, setVideoPlaying] = useState(false)
     const [time, setTime] = useState({s:0,m:0})
