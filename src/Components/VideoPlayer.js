@@ -6,10 +6,10 @@ import PauseIcon from '@material-ui/icons/Pause';
 import { Slider } from '@material-ui/core';
 import { useDispatch, useSelector } from 'react-redux';
 import { setTimerInterval } from '../Redux/Search/SearchActions';
+import videoPlayBack from './videoForClone.webm'
 
 
 function VideoPlayer() {
-    const videoLink = "https://vod-progressive.akamaized.net/exp=1603822335~acl=%2A%2F700245120.mp4%2A~hmac=1574a7dd385e9c2df7fe836502bbd1fc19c2a4af7e04c8bbfa791a0d1297d4dd/vimeo-prod-skyfire-std-us/01/1132/8/205660469/700245120.mp4"
 
     const [videoPlaying, setVideoPlaying] = useState(false)
     const [time, setTime] = useState({s:0,m:0})
@@ -21,6 +21,7 @@ function VideoPlayer() {
     const [timeLine, setTimeLine] = useState(0)
     var updateM = time.m;
     var updateS = time.s;
+    var autoPlayOnce = true;
 
     const toggleVideoPlaying = (event) =>{
         if(time.s === videoDuration.s && time.m === videoDuration.m){
@@ -72,7 +73,7 @@ function VideoPlayer() {
     return (
         <div className="videoplayer"onMouseOver={handleVideoDuration}>
             <video className="videoplayer__player"
-                src={videoLink}
+                src={videoPlayBack}
                 onClick={toggleVideoPlaying}
                 ref={videoPlayer}
                 poster="https://www.videograbber.net/wp-content/uploads/2017/12/youtube-thumbnail-grabbers.jpg"
