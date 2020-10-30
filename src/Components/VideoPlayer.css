@@ -12,17 +12,17 @@
 .videoplayer__player:hover ~ .videoplayer__options{
     opacity: 100%;
 }
-.videoplayer__player:hover ~ .redLine{
+.videoplayer__player:hover ~ .videoplayer__options > .sliderDiv > .redLine{
     opacity: 100%;
 }
-.videoplayer__player:hover ~ .greyLine{
+.videoplayer__player:hover ~ .videoplayer__options > .greyLine{
     opacity: 50%;
 }
 
-.videoplayer__options:hover ~ .redLine{
+.videoplayer__options:hover > .redLine{
     opacity: 100%;
 }
-.videoplayer__options:hover ~ .greyLine{
+.videoplayer__options:hover > .greyLine{
     opacity: 50%;
 }
 
@@ -91,9 +91,34 @@
     width: 60px !important;
 }
 
-.redLine{
+.redSlider{
+    -webkit-appearance: none; 
+    appearance: none;
     position: absolute;
-    background-color:red;
+    width: 100%;
+    height: 4px;
+    bottom: 40px;
+    outline: 0;
+    border: 0;
+    opacity: 0%;
+    background: transparent;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.redSlider::-webkit-slider-thumb{
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 15px; 
+  height: 15px; 
+  background: red; 
+  cursor: pointer; 
+  border-radius: 10px;
+}
+
+.greyLine{
+    position: absolute;
+    background-color:rgb(95, 95, 95);
     width: 100%;
     height: 3px;
     bottom: 40px;
@@ -102,14 +127,26 @@
     opacity: 0%;
 }
 
-.greyLine{
+.redLine{
     position: absolute;
-    background-color:lightgray;
-    width: 100%;
-    height: 3px;
+    height: 4px;
     bottom: 40px;
+    background-color: red;
     outline: 0;
     border: 0;
-    opacity: 0%;
 }
+
+.redSlider:hover ~ .redLine{
+    height: 5px;
+}
+
+.redSlider:hover ~ .greyLine{
+    height: 5px;
+}
+
+.redSlider:hover{
+    opacity: 100%;
+}
+
+
 

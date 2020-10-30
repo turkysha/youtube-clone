@@ -8,7 +8,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setTimerInterval } from '../Redux/Search/SearchActions';
 import videoPlayBack from './videoForClone.webm'
 
-
 function VideoPlayer() {
 
     const [videoPlaying, setVideoPlaying] = useState(false)
@@ -16,18 +15,15 @@ function VideoPlayer() {
     const interv = useSelector(state => state.newTimerInterval)
     const dispatch = useDispatch()
     const videoPlayer = useRef(null)
+    const slider = useRef(null)
     const[videoDuration, setVideoDuration] = useState({s:0,m:0});
     const [volumenValue, setVolumenValue] = useState(30);
     const [timeLine, setTimeLine] = useState(0)
+    const [videoPreviousState, setVideoPreviousState] = useState(false)
     var updateM = time.m;
     var updateS = time.s;
-    var autoPlayOnce = true;
 
     const toggleVideoPlaying = (event) =>{
-        if(time.s === videoDuration.s && time.m === videoDuration.m){
-            updateM=0;
-            updateS=0;
-        }
         videoPlaying ? videoPlayer.current.pause() : videoPlayer.current.play();
         videoPlaying ? timerPause() : timerStart()
         setVideoPlaying(!videoPlaying)
@@ -50,16 +46,13 @@ function VideoPlayer() {
 
     const timerStart = () =>{
         runTimer()
-        dispatch(setTimerInterval(setInterval(runTimer, 1000)))
+        dispatch(setTimerInterval(setInterval(runTimer, 10)))
     }
 
     const runTimer = () =>{
         setTimeLine(videoPlayer.current.currentTime/videoPlayer.current.duration*100)
-        if(updateS === 59){
-            updateM++;
-            updateS = -1;
-        }
-        updateS++;
+        updateM = parseInt(videoPlayer.current.currentTime/60);
+        updateS = parseInt(videoPlayer.current.currentTime%60);
         return setTime({s:updateS,m:updateM})
     }
 
@@ -70,17 +63,46 @@ function VideoPlayer() {
         setTime({s:videoDuration.s,m:videoDuration.m})
     }
 
+    const handleSlider = (event) =>{
+        setTimeLine(slider.current.value)
+        videoPlayer.current.currentTime = videoPlayer.current.duration * (slider.current.value/100);
+        updateM = parseInt(videoPlayer.current.currentTime/60);
+        updateS = parseInt(videoPlayer.current.currentTime%60);
+        setTime({s:updateS,m:updateM})
+    }
+
+    const handleSliderMouseDown = ()=>{
+        setVideoPreviousState(videoPlaying)
+        if(videoPlaying === true){
+            videoPlayer.current.pause()
+            setVideoPlaying(!videoPlaying)
+        }
+    }
+
+    const handleMouseUp = () =>{
+        if(videoPreviousState === true){
+            videoPlayer.current.play()
+            setVideoPlaying(!videoPlaying)
+        }
+    }
+
     return (
-        <div className="videoplayer"onMouseOver={handleVideoDuration}>
+        <div className="videoplayer" onMouseEnter={handleVideoDuration}>
             <video className="videoplayer__player"
                 src={videoPlayBack}
                 onClick={toggleVideoPlaying}
                 ref={videoPlayer}
                 poster="https://www.videograbber.net/wp-content/uploads/2017/12/youtube-thumbnail-grabbers.jpg"
                 onEnded={handleVideoEnd}
+                autoPlay={true}
+                onLoadedData={toggleVideoPlaying}
             >
             </video>
             <div className="videoplayer__options">
+            <input type="range" ref={slider} className="redSlider" value={timeLine} onChange={handleSlider} min={0} max={100} step={0.1} onMouseDown={handleSliderMouseDown} onMouseUp={handleMouseUp} />
+            <hr className="greyLine"/>
+            <hr className="redLine" style={{width:timeLine+'%'}}></hr>
+           
             <button className="videoplayer__options__play" onClick={toggleVideoPlaying}>
                 { videoPlaying ? <PauseIcon className="videoplayer__icon"/> : <PlayArrowIcon className="videoplayer__icon"/>}
             </button>
@@ -90,8 +112,8 @@ function VideoPlayer() {
             </div>
             <label>{time.m}:{(time.s < 10) ? "0" + time.s : time.s}/{videoDuration.m}:{(videoDuration.s <10) ? "0"+videoDuration.s : videoDuration.s}</label>
             </div>
-            <hr className="greyLine"/>
-            <hr className="redLine" style={{width:timeLine+'%'}}></hr>
+
+
         </div>
     )
 }
