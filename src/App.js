@@ -11,6 +11,7 @@ import {Provider} from 'react-redux'
 import Store from './Redux/Store'
 import Trending from './Components/Trending'
 import VideoPage from './Components/VideoPage'
+import LoginModal from './Components/LoginModal'
 
 
 function App() {
@@ -18,8 +19,10 @@ function App() {
     <Provider store={Store}>
     <div className="app">
       <Router>
+        <LoginModal />
         <Header />
         <SearchList />
+
 
         <Switch>
 

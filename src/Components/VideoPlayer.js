@@ -87,15 +87,15 @@ function VideoPlayer() {
     }
 
     return (
-        <div className="videoplayer" onMouseEnter={handleVideoDuration}>
+        <div className="videoplayer" >
             <video className="videoplayer__player"
                 src={videoPlayBack}
                 onClick={toggleVideoPlaying}
                 ref={videoPlayer}
                 poster="https://www.videograbber.net/wp-content/uploads/2017/12/youtube-thumbnail-grabbers.jpg"
                 onEnded={handleVideoEnd}
-                autoPlay={true}
                 onLoadedData={toggleVideoPlaying}
+                onPlay={handleVideoDuration}
             >
             </video>
             <div className="videoplayer__options">
