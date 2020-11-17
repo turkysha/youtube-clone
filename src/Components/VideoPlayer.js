@@ -76,6 +76,7 @@ function VideoPlayer() {
     const handleVideoEnd = () =>{
         setTime({s:videoDuration.s,m:videoDuration.m})
         setVideoEnded(true)
+        setVideoPlaying(!videoPlaying)
     }
 
     const handleSlider = () =>{
