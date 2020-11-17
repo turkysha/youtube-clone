@@ -1,8 +1,7 @@
 const UPDATE_SEARCH_LIST = 'UPDATE_SEARCH_LIST'
 const HEADER_BUTTON_SIDEBAR_TOGGLE = 'HEADER_BUTTON_SIDEBAR_TOGGLE'
 const UPDATE_SEARCH_INPUT = 'UPDATE_SEARCH_INPUT'
-const SET_TIMER_INTERVAL = 'SET_TIMER_INTERVAL'
-const TOGGLE_LOGIN = 'TOGGLE_LOGIN'
+const TOGGLE_LOGIN_MODAL = 'TOGGLE_LOGIN_MODAL'
 
 export const updateSearchList = (searchData) => {
     return{
@@ -25,16 +24,9 @@ export const updateSearchInput = (newInput) => {
 
 }
 
-export const setTimerInterval = (newInterval) =>{
+export const toggleLoginModal = (newModalState) =>{
     return{
-        type: SET_TIMER_INTERVAL,
-        payload: newInterval
-    }
-}
-
-export const toggleLogin = (newLoginStatus) =>{
-    return{
-        type: TOGGLE_LOGIN,
-        payload: newLoginStatus
+        type: TOGGLE_LOGIN_MODAL,
+        payload: newModalState
     }
 }

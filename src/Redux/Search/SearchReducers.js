@@ -1,15 +1,13 @@
 const UPDATE_SEARCH_LIST = 'UPDATE_SEARCH_LIST'
 const HEADER_BUTTON_SIDEBAR_TOGGLE = 'HEADER_BUTTON_SIDEBAR_TOGGLE'
 const UPDATE_SEARCH_INPUT = 'UPDATE_SEARCH_INPUT'
-const SET_TIMER_INTERVAL = 'SET_TIMER_INTERVAL'
-const TOGGLE_LOGIN = 'TOGGLE_LOGIN'
+const TOGGLE_LOGIN_MODAL = 'TOGGLE_LOGIN_MODAL'
 
 const initialState = {
     searchResults: [],
     headerButton: true,
     newSearchInputValue: '',
-    newTimerInterval: 0,
-    loginStatus: false
+    loginModalStatus: true
 }
 
 const searchReducer = (state = initialState, action) => {
@@ -26,13 +24,9 @@ const searchReducer = (state = initialState, action) => {
             ...state,
             newSearchInputValue: action.payload
         }
-        case SET_TIMER_INTERVAL: return{
+        case TOGGLE_LOGIN_MODAL: return{
             ...state,
-            newTimerInterval: action.payload
-        }
-        case TOGGLE_LOGIN: return{
-            ...state,
-            loginStatus: action.payload
+            loginModalStatus: action.payload
         }  
         default: return state
     }

@@ -8,7 +8,7 @@ import Avatar from '@material-ui/core/Avatar'
 import './Header.css'
 import { Link } from 'react-router-dom'
 import SearchItems from './SearchItems'
-import { updateSearchList, toggleHeaderButtonAction, updateSearchInput, toggleLogin } from '../Redux/Search/SearchActions'
+import { updateSearchList, toggleHeaderButtonAction, updateSearchInput} from '../Redux/Search/SearchActions'
 import {useDispatch, useSelector} from 'react-redux'
 import axios from 'axios'
 
@@ -16,7 +16,6 @@ import axios from 'axios'
 
 function Header(){
     const newInputValue = useSelector(state => state.newSearchInputValue);
-    const [headerButtonToggle, setHeaderButtonToggle] = useState(false)
     const dispatch = useDispatch()
 
     const fetchUrl = "https://www.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=UC_x5XG1OV2P6uZZ5FSM9Ttw&key=AIzaSyDCg18ul8kCURkFsV2e_CzDcieYLveY7Uc"
@@ -42,7 +41,6 @@ function Header(){
             suggestions = SearchItems.sort().filter(item => item.toLowerCase().startsWith(value.toLowerCase()))
             suggestions.length = 12;
         }
-        const inputEscapeCharsValue = value.replace()
         dispatch(updateSearchInput(value));
         dispatch(updateSearchList(suggestions))
     }
@@ -53,8 +51,6 @@ function Header(){
     }
 
     const toggleHeaderButton = () => {
-        let toggle = headerButtonToggle
-        setHeaderButtonToggle(!headerButtonToggle)
         dispatch(toggleHeaderButtonAction())
     }
 

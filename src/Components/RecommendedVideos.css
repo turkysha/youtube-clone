@@ -9,6 +9,7 @@
 .recommendedVideos > h2 {
     padding-left: 100px;
     padding-bottom: 20px;
+    font-weight: 100;
 }
 
 .recommendedVideos_videos {

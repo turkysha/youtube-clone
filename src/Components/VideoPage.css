@@ -2,8 +2,6 @@
     flex: 1;
     display: flex;
     flex-direction: row;
-    padding-left: 10px;
-    padding-top: 20px;
     background-color: #f9f9f9;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -20,8 +18,8 @@
 .videoPage__title {
     font-size: 20px;
     padding-top: 20px;
-    padding-bottom: 10px;
     font-weight: 100;
+    padding-left: 10px;
 }
 
 .videoPage__date{
@@ -32,6 +30,7 @@
     display: flex;
     height: 40px;
     padding-bottom: 10px;
+    padding-left: 10px;
 }
 
 .videoPage__info__left{
@@ -54,23 +53,36 @@
 }
 
 .videoPage__info__icons{
-    flex: 0.5;
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: flex-end;
 }
 
 .videoPage__info__icon{
     height: 25px !important;
     width: 25px !important;
-    color: #606060 !important;
-    margin-left: 20px;
+    color: rgb(148, 148, 148) !important;
+    padding: 10px;
+    border-radius: 50%;
+    transition: all 250ms ease !important;
+}
+
+.videoPage__info__icon.videoLiked{
+    color:  rgb(0, 110, 255) !important;
+}
+
+.videoPage__info__icon.videoDisLiked{
+    color:  rgb(0, 110, 255) !important;
 }
 
 .videoPage__info__label{
     font-size: 14px;
     color: #606060;
-    margin-left: 10px;
+}
+
+.videoPage__info__label:hover{
+    cursor: pointer;
 }
 
 .videoPage__info__icons > button{
@@ -80,10 +92,16 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin-right: 20px;
 }
+
 
 .videoPage__info__icons > button:hover{
     cursor: pointer;
+}
+
+.videoPage__info__icons > button:active > .videoPage__info__icon{
+    background-color: lightgray;
 }
 
 .videoPage__left > hr{
@@ -91,7 +109,7 @@
     border: 0;
     background-color: lightgray;
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .videoPage__channelInfo{
@@ -99,6 +117,7 @@
     display: flex;
     flex-direction: row;
     padding-bottom: 20px;
+    padding-left: 10px;
 }
 
 .videoPage__channelInfo__left{
@@ -137,12 +156,12 @@
 
 .joinButton{
     border: 0.2px solid;
-    border-color: #0061bb;
+    border-color:  rgb(0, 110, 255);
     height: 35px !important;
     width: 110px !important;
     border-radius: 2px;
     outline: 0;
-    color:  #0061bb;
+    color:   rgb(0, 110, 255);
     background-color: transparent;
     font-weight: 600;
     margin-right: 10px;
@@ -184,7 +203,7 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     font-weight: 100;
-    padding-left: 5.3%;
+    padding-left: 5.7%;
     max-width: 50%;
     padding-bottom: 10px;
 }
@@ -198,4 +217,48 @@
 
 .videoPage__right > div{
     padding-top: 10px;
+}
+
+.videoPage__comments__top{
+    display: flex;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-left: 10px;
+}
+
+.videoPage__comments__top > label{
+    font-size: 18px;
+}
+
+.videoPage__sortBtn{
+    background-color: transparent;
+    color: #606060;
+    border: 0;
+    outline: 0;
+    display: flex;
+    margin-left: 50px;
+    font-size: 16px;
+    align-items: center;
+}
+
+.videoPage__sortBtn:hover{
+    cursor: pointer;
+}
+
+.videoPage__comments_sortIcon{
+    height: 20px !important;
+    width: 20px !important;
+    color: #606060 !important;
+}
+
+.videoPage__comments__content{
+    padding-top: 20px;
+}
+
+.videoPage__info__link:link{
+    text-decoration: none;
+}
+
+.videoPage__info__link:visited{
+    text-decoration: none;
 }

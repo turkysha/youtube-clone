@@ -12,6 +12,8 @@ import Store from './Redux/Store'
 import Trending from './Components/Trending'
 import VideoPage from './Components/VideoPage'
 import LoginModal from './Components/LoginModal'
+import Login from './Components/Login'
+import Subscriptions from './Components/Subscriptions'
 
 
 function App() {
@@ -25,6 +27,19 @@ function App() {
 
 
         <Switch>
+
+        <Route path="/subscriptions">
+          <div className="app__page">
+            <SideBar selected="Subscriptions"/> 
+            <Subscriptions />
+          </div>
+        </Route>
+
+        <Route path="/login">
+          <div className="app__page">
+            <Login />
+          </div>
+        </Route>
 
         <Route path="/videoPage">
             <div className="app__page">

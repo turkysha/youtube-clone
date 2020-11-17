@@ -10,7 +10,6 @@ function RecommendedVideos(){
 
     return(
         <div className="recommendedVideos" style={toggleScreen ? null : {flex:1}}>
-            <h2>Recommended</h2>
             <div className="recommendedVideos_videos">
                 <VideoCard
                     title="Learn programming React in 2020"

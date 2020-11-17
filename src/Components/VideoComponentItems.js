@@ -6,7 +6,7 @@ const VideoComponentItems =[
         description:"Do you want a FREE one hour training... Visit our our page imediately!!!",
         timestamp:"1 hour ago",
         channel:"Travis Scott",
-        title:"Travis Scott - YOSEMITE (Audio)",
+        title:"TYLER1: TWITCH RIVALS GLITCH CON EDITION",
         scaleComponent: true,
     },
     {

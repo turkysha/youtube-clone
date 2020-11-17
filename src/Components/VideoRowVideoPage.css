@@ -4,7 +4,7 @@
     margin-left: 10px;
     margin-bottom: 20px;
     margin-top: 10px;
-    max-width: 400px;
+    max-width: 350px;
 }
 
 .videoRowVideoPage > img:hover{
@@ -28,22 +28,13 @@
 
 .videoRowVideoPage__text > h3 {
     padding-bottom: 5px;
-    font-weight: 600;
+    font-weight: 100;
     font-size: 14px;
 }
 
 .videoRowVideoPage__headline {
-    font-size: 12px;
+    font-size: 13px;
     color: #606060;
-    padding-bottom: 5px;
+    padding-top: 3px;
 }
 
-.videoRowVideoPage__subsNumber{
-    font-weight: bolder;
-    color: rgb(194, 33, 33);
-}
-
-.videoRowVideoPage__subscribers {
-    background-color: lightgray;
-    border-radius: 2px;
-}

@@ -1,0 +1,79 @@
+.subs{
+    display: flex;
+    flex-direction: column;
+    background-color: #f9f9f9;
+    padding-left: 295px;
+    padding-right: 295px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.subs__top{
+    display: flex;
+    align-items: center;
+    padding-top: 25px;
+}
+
+.subs__content{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.subs__top__left{
+    display: flex;
+}
+
+.subs__top__left > label{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.subs__top__icons{
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    padding-right: 10px;
+    align-items: center;
+}
+
+.subs__top__icons > label{
+    font-size: 15px;
+    font-weight: bold;
+    color: rgb(0, 99, 230);
+}
+
+.subs__top__icon{
+    color: #8f8f8f !important;
+}
+
+.subs__top__icon.blue{
+    color:  rgb(0, 99, 230) !important;
+}
+
+.subs__top__icons >button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+    background-color: transparent;
+    outline: 0;
+    border: 0;
+    border-radius: 50%;
+    transition: all 250ms ease;
+    padding: 10px;
+}
+
+.subs__top__icons > button:hover{
+    cursor: pointer;
+}
+
+.subs__top__icons > button:active{
+    background-color: rgb(212,212,212);
+}
+
+.subs__top__icon:hover{
+    cursor: pointer;
+}
+
+.subs__top__icons > label:hover{
+    cursor: pointer;
+}

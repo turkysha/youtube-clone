@@ -1,18 +1,24 @@
-import { Modal } from '@material-ui/core';
-import React, { useState } from 'react'
+import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { toggleLogin } from '../Redux/Search/SearchActions'
+import { toggleLoginModal } from '../Redux/Search/SearchActions'
 import './LoginModal.css'
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import { useHistory } from 'react-router-dom';
 
 export default function LoginModal() {
-    const loginState = useSelector(state => state.loginStatus);
+    const loginModalState = useSelector(state => state.loginModalStatus);
     const dispatch = useDispatch();
+    const history = useHistory();
+    
+    const handleLogin = () =>{
+        dispatch(toggleLoginModal(false))
+        history.push("/login");
+    }
 
-    if(loginState==true) return null;
+    if(loginModalState===false || !history.location.pathname) return null;
 
     return (
-        <div className="loginModal" open={loginState} onClose={() => dispatch(loginState(false))}>
+        <div className="loginModal">
             <div className="loginModal__overlay"/>
             <div className="loginModal__background">
                 <div className="loginModal__left"> 
@@ -28,8 +34,8 @@ export default function LoginModal() {
                     </div>
                     <label>Learn more</label>
                     <div className="buttonDiv"> 
-                        <button className="closeButton" onClick={() => dispatch(toggleLogin(true))}>NO THANKS</button>
-                        <button className="loginButton" onClick={() => dispatch(toggleLogin(true))}>
+                        <button className="closeButton" onClick={() => dispatch(toggleLoginModal(false))}>NO THANKS</button>
+                        <button className="loginButton" onClick={handleLogin}>
                             <AccountCircleIcon className="accountCircle"/>
                             LOGIN
                         </button>   

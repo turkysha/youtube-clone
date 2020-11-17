@@ -1,0 +1,72 @@
+.commentAdd{
+    display: flex;
+    margin: 20px;
+    margin-bottom: 40px;
+}
+
+.commentAdd__right{
+    width: 100%;
+    padding-left: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.commentAdd__right__inputDiv > input{
+    border: 0px;
+    width: 100%;
+    border-bottom: 1px solid lightgray;
+    background-color: transparent;
+    outline: 0px;
+    font-size: 14px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.commentAdd__right__inputDiv > span::after{
+    display: block;
+    content: '';
+    border-bottom: 2px solid black;
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out;
+}
+
+.commentAdd__right__inputDiv > input:focus ~ span::after{
+    transform: scaleX(1);
+}
+
+
+
+.commentAdd__right__buttons{
+    display: flex;
+    flex: 1;
+    align-items: center;
+    padding-top: 5px;
+    justify-content: flex-end;
+}
+
+.commentAdd__right__add:hover{
+    cursor: pointer;
+}
+
+.commentAdd__right__cancel:hover{
+    cursor: pointer;
+}
+
+.commentAdd__right__cancel{
+    font-size: 16px;
+    background-color: transparent;
+    outline: 0px;
+    color: #606060;
+    border: 0px;
+    margin-right: 20px;
+}
+
+.commentAdd__right__add{
+    padding: 10px;
+    height: 35px;
+    font-size: 16px;
+    background-color: rgb(0, 110, 255);
+    color: white;
+    border: 0px;
+    border-radius: 2px;
+    outline: 0px;
+}

@@ -1,0 +1,31 @@
+.subsGrid{
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 186px;
+    padding-top: 25px;
+    padding-right: 5px;
+}
+
+.subsGrid > img{
+    width: 186px;
+    height: auto;
+}
+
+.subsGrid__text > h3{
+    padding-top: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.susbGrid__headline{
+    padding-top: 5px;
+    font-size: 12px;
+    color: #606060;
+}
+
+.subsGrid__text > div{
+    padding-top: 10px;
+    font-size: 12px;
+    color: #606060;
+}

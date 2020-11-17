@@ -1,0 +1,75 @@
+.comment{
+    display: flex;
+    margin: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.comment__right{
+    padding-left: 20px;
+}
+
+.comment__right__top{
+    display: flex;
+}
+
+.comment__right__top > div{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.comment__right__top > label{
+    font-size: 14px;
+    padding-left: 10px;
+    color: #606060;
+}
+
+.comment__right__middle{
+    padding-top: 6px;
+    padding-bottom: 12px;
+}
+
+.comment__right__bottom{
+    display: flex;
+    align-items: center;
+}
+
+.comment__right__bottom__icon{
+    width: 18px !important;
+    height: 18px !important;
+    color: rgb(148, 148, 148) !important;
+    padding-right: 5px;
+}
+
+.comment__right__bottom__like{
+    display: flex;
+    align-items: center;
+    color: #606060;
+    background-color: transparent;
+    outline: 0px;
+    border: 0px;
+    margin-right: 10px;
+}
+
+.comment__right__bottom__like:hover{
+    cursor: pointer;
+}
+
+.comment__right__bottom__dislike{
+    background-color: transparent;
+    outline: 0px;
+    border: 0px;
+}
+
+.comment__right__bottom__dislike:hover{
+    cursor: pointer;
+}
+
+.comment__right__bottom > label{
+    font-size: 14px;
+    color: #606060;
+    padding-left: 15px;
+}
+
+.comment__right__bottom > label:hover{
+    cursor: pointer;
+}

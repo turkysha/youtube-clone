@@ -1,14 +1,11 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
 import './SidebarRow.css'
-import {useSelector} from 'react-redux'
 
 function SidebarRow({route, title, selected, Icon}){
     const history = useHistory();
-    const interv = useSelector(state => state.newTimerInterval)
 
     const handleRoute = ()=>{
-        clearInterval(interv)
         history.push(route)
     }
     return(

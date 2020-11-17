@@ -40,7 +40,7 @@ function SideBar({selected}){
         <div className="sidebar" style={toggleSideBarButton ? null: {flex:0.01, minWidth:50}}>
             <SidebarRow selected={homeSelected} title={toggleSideBarButton ? "Home" : null} Icon={HomeIcon} route="/"/>
             <SidebarRow selected={trendingSelected} title={toggleSideBarButton ? "Trending" : null} Icon={WhatshotIcon} route="/trending"/>
-            <SidebarRow selected={subscriptionsSelected} title={toggleSideBarButton ? "Subscriptions" : null} Icon={SubscriptionsIcon}/>
+            <SidebarRow selected={subscriptionsSelected} title={toggleSideBarButton ? "Subscriptions" : null} Icon={SubscriptionsIcon} route="/subscriptions"/>
             <hr></hr>
             <SidebarRow selected={librarySelected} title={toggleSideBarButton ? "Library" : null} Icon={VideoLibraryIcon}/>
             <SidebarRow selected={historySelected} title={toggleSideBarButton ? "History" : null} Icon={HistoryIcon}/>
