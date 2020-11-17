@@ -47,6 +47,10 @@ function VideoPlayer() {
     },[])
 
     const toggleVideoPlaying = () =>{
+        if(videoEnded){
+            videoPlayer.current.load()
+            setVideoEnded(false)
+        }
         videoPlaying ? videoPlayer.current.pause() : videoPlayer.current.play();
         setVideoPlaying(!videoPlaying)
     }
@@ -97,7 +101,8 @@ function VideoPlayer() {
 
     const handleMouseUp = () =>{
         if(videoPreviousState === true){
-            toggleVideoPlaying()
+            videoPlayer.current.play()
+            setVideoPlaying(!videoPlaying)
         }
     }
 
