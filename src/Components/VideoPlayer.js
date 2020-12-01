@@ -47,10 +47,6 @@ function VideoPlayer() {
     },[])
 
     const toggleVideoPlaying = () =>{
-        if(videoEnded){
-            videoPlayer.current.load()
-            setVideoEnded(false)
-        }
         videoPlaying ? videoPlayer.current.pause() : videoPlayer.current.play();
         setVideoPlaying(!videoPlaying)
     }
@@ -79,8 +75,8 @@ function VideoPlayer() {
 
     const handleVideoEnd = () =>{
         setTime({s:videoDuration.s,m:videoDuration.m})
+        setVideoPlaying(false)
         setVideoEnded(true)
-        setVideoPlaying(!videoPlaying)
     }
 
     const handleSlider = () =>{
@@ -166,7 +162,7 @@ function VideoPlayer() {
     }
 
     return (
-        <div className="videoplayer" ref={videoPlayerContainer} style={videoPaused ? {cursor:"auto"} : (mouseStyle ? {cursor:"auto"}:{cursor:"none"})}>
+        <div className="videoplayer" ref={videoPlayerContainer} style={videoPaused ? {cursor:"pointer"} : (mouseStyle ? {cursor:"pointer"}:{cursor:"none"})}>
             <div id="cursorDiv" className="cursorToggleDiv" onClick={toggleVideoPlaying}></div>
             <div className="videoplayer__hover"  style={videoPaused ? {WebkitBoxShadow: "inset 0px -50px 50px -30px rgba(0,0,0,0.8)",boxShadow: "inset 0px -50px 50px -30px rgba(0,0,0,0.8)"} 
              : (mouseStyle ? {display:"flex"}:{display:"none"})}></div>
@@ -176,7 +172,6 @@ function VideoPlayer() {
                 ref={videoPlayer}
                 poster="https://www.videograbber.net/wp-content/uploads/2017/12/youtube-thumbnail-grabbers.jpg"
                 onEnded={handleVideoEnd}
-                onLoadedData={toggleVideoPlaying}
                 onPlay={handleVideoDuration}
                 onPause={handleVideoPause}
                 preload="true"
@@ -186,6 +181,7 @@ function VideoPlayer() {
                 onLoadStart={() => videoPlayer.current.volume=0.2}
                 controls={false}
                 onTimeUpdate={timeUpdate}
+                autoPlay={true}
             >
             </video>
             <div className="videoplayer__options" style={videoPaused ? {opacity: 100, display: "flex"} : (!mouseStyle ? {display: "none"} : {display: "flex"})} >

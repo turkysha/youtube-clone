@@ -33,7 +33,9 @@
     transform: scaleX(1);
 }
 
-
+.commentAdd__right__inputDiv > input:focus{
+    border-bottom: 1px solid #f9f9f9;
+}
 
 .commentAdd__right__buttons{
     display: flex;

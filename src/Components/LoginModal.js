@@ -19,7 +19,7 @@ export default function LoginModal() {
 
     return (
         <div className="loginModal">
-            <div className="loginModal__overlay"/>
+            <div className="loginModal__overlay" onClick={() => dispatch(toggleLoginModal(false))}/>
             <div className="loginModal__background">
                 <div className="loginModal__left"> 
                     <img src="https://i.pinimg.com/originals/c8/cc/ba/c8ccbac628c0b3b28c76932db604f958.png" alt="loginLogo"/>
